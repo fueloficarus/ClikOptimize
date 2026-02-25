@@ -3,7 +3,7 @@
 # ntopng Light Mode Setup Script
 # Target: Raspberry Pi Zero (Raspberry Pi OS Lite)
 # Author: B.
-# Purpose: Install and configure ntopng in lightweight mode
+# Purpose: Standalone install and configure ntopng in lightweight mode
 # ------------------------------------------------------------
 
 set -euo pipefail
