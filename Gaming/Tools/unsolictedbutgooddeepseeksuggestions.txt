@@ -1,0 +1,20 @@
+@echo off
+REM This script will optimize the system for gaming, rendering, or other intensive workloads
+
+:: Disable SuperFetch
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\Superfetch" /v Start /t REG_DWORD /d 0x4 /f >nul
+echo SuperFetch disabled. Please restart your PC to see changes.
+
+:: Disable PageComb
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLazyMode /t REG_DWORD /d 0x0 /f >nul
+echo Page Combining disabled. Please restart your PC to see changes.
+
+:: Disable Memory Compression & PageComb
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\msscdx" /v Start /t REG<｜begin▁of▁sentence｜>_DWORD /d 0x4 /f >nul
+echo Superfetch disabled. Please restart your PC to see changes.
+
+:: Set High Performance Power Scheme for gaming, rendering and other intensive tasks
+powercfg -setactive scheme_maxperformance
+echo The power plan has been set to Maximum Performance. You may need to adjust settings as per your needs. 
+
+pause
